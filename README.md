@@ -8,10 +8,9 @@ O frontend da aplicação foi desenvolvido com Angular e o backend foi simulado 
 ## Endereço de Deploy - GitHub Pages
 
 
-
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+
 
 ## Checklist
 
