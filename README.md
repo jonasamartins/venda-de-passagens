@@ -10,7 +10,7 @@ https://jonasamartins/venda-de-passagens/
 
 ## Protótipo
 
-https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80
+[https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%](https://www.figma.com/file/ZMbgNQfMi31cOeyE2XrrVk/venda-de-passagens?type=design&node-id=5%3A2&mode=design&t=HUP5NR3XnyX2bXbk-1)
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
