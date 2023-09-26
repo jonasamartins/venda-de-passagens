@@ -62,3 +62,5 @@ https://jonasamartins/venda-de-passagens/
 - O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo `db.json` e `routes.json`.
   - Por padrão, a aplicação JSON Server executa no endereço `localhost:3000`    
 - Executar o projeto frontend.
+
+https://github.com/jonasamartins/venda-de-passagens.git
