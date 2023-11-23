@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Sobre Nós</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Vendas de Passagens</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="pacotes-aereos.html">Pacotes Aéreos</a></li>
+                    <li><a href="pacotes-terrestres.html">Pacotes Terrestres</a></li>
+                    <li><a href="sobre-nos-contato.html">Sobre Nós</a></li>
+                    <li><a href="area-cliente.html" onclick="loadAreaCliente()">Área do Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="content" class="area-cliente">
+            <div class="container">
+                <h2>Área do Cliente</h2>
+                <button onclick="loadCadastro()">Cadastrar</button>
+                <button onclick="loadLogin()">Login</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Todos os direitos reservados &copy; 2023. Desenvolvido por Jonas A. Martins</p>
+        </div>
+    </footer>
+
+    <script>
+        function loadAreaCliente() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Área do Cliente</h2>
+                    <button onclick="loadCadastro()">Cadastrar</button>
+                    <button onclick="loadLogin()">Login</button>
+                </div>
+            `;
+        }
+
+        function loadCadastro() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Cadastrar</h2>
+                    <form id="cadastro-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="text" id="celular" name="celular" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" required>
+                        <button onclick="buscarCep()">Buscar CEP</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="logradouro">Logradouro</label>
+                        <input type="text" id="logradouro" name="logradouro" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="uf">UF</label>
+                        <input type="text" id="uf" name="uf" readonly>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Cadastrar</button>
+                        <button type="reset">Limpar Campos</button>
+                    </div>
+                </form>
+                </div>
+            `;
+        }
+
+        function loadLogin() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Login</button>
+                        <a href="esqueceu-senha.html">Esqueceu a senha?</a>
+                    </div>
+                </form>
+                </div>
+            `;
+        }
+
+        function buscarCep() {
+            // Implemente aqui a lógica para buscar o CEP e preencher os campos Logradouro, Bairro, Cidade e UF.
+        }
+    </script>
+</body>
+</html>

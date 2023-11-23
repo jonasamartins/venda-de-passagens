@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Sobre Nós</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Vendas de Passagens</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="pacotes-aereos.html">Pacotes Aéreos</a></li>
+                    <li><a href="pacotes-terrestres.html">Pacotes Terrestres</a></li>
+                    <li><a href="sobre-nos-contato.html">Sobre Nós</a></li>
+                    <li><a href="area-cliente.html" onclick="loadAreaCliente()">Área do Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="content" class="area-cliente">
+            <div class="container">
+                <h2>Área do Cliente</h2>
+                <button onclick="loadCadastro()">Cadastrar</button>
+                <button onclick="loadLogin()">Login</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Todos os direitos reservados &copy; 2023. Desenvolvido por Jonas A. Martins</p>
+        </div>
+    </footer>
+
+    <script>
+            let formData = {};
+
+        function loadAreaCliente() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Área do Cliente</h2>
+                    <button onclick="loadCadastro()">Cadastrar</button>
+                    <button onclick="loadLogin()">Login</button>
+                </div>
+            `;
+        }
+
+        function loadCadastro() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Cadastrar</h2>
+                    <form id="cadastro-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="celular">Celular</label>
+                        <input type="text" id="celular" name="celular" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" id="cep" name="cep" required>
+                        <button onclick="buscarCep()" type=button>Buscar CEP</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="logradouro">Logradouro</label>
+                        <input type="text" id="logradouro" name="logradouro" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="uf">UF</label>
+                        <input type="text" id="uf" name="uf" readonly>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" onclick="submitForm(event)">Cadastrar</button>
+                        <button type="reset">Limpar Campos</button>
+                    </div>
+                </form>
+                </div>
+            `;
+        }
+
+        function submitForm(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Aqui você pode coletar os dados do formulário e armazená-los na variável formData
+        formData.email = document.getElementById("email").value;
+        formData.cpf = document.getElementById("cpf").value;
+        // ... continuar para os outros campos do formulário
+
+        // Após coletar os dados, exiba o modal para confirmar ou editar os dados
+        showModal();
+    }
+
+    function showModal() {
+        const modalContent = `
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Confirme seus dados:</h2>
+                    <p>Email: ${formData.email}</p>
+                    <p>CPF: ${formData.cpf}</p>
+                    <!-- Adicionar os outros campos do formulário aqui -->
+                    <button onclick="submitConfirmed()">Confirmar</button>
+                    <button onclick="editData()">Editar</button>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalContent);
+    }
+
+    function closeModal() {
+        const modal = document.querySelector('.modal');
+        modal.remove();
+    }
+
+    function submitConfirmed() {
+        // Aqui você pode enviar os dados para o backend ou executar a ação desejada após a confirmação
+        // Por exemplo, enviar os dados para um servidor ou salvar localmente
+        // Após a ação desejada, feche o modal
+        closeModal();
+    }
+
+    function editData() {
+        // Se o usuário optar por editar os dados, redirecione para o formulário novamente
+        loadCadastro();
+        // Preencha o formulário com os dados previamente inseridos
+        document.getElementById("email").value = formData.email;
+        document.getElementById("cpf").value = formData.cpf;
+        // ... preencher os outros campos do formulário com os dados da formData
+        closeModal();
+    }
+
+        function loadLogin() {
+            const content = document.getElementById("content");
+            content.innerHTML = `
+                <div class="container">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Login</button>
+                        <a href="esqueceu-senha.html">Esqueceu a senha?</a>
+                    </div>
+                </form>
+                </div>
+            `;
+        }
+
+        function buscarCep() {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const cepInput = document.getElementById("cep");
+            const logradouroInput = document.getElementById("logradouro");
+            const bairroInput = document.getElementById("bairro");
+            const cidadeInput = document.getElementById("cidade");
+            const ufInput = document.getElementById("uf");
+
+            // Obtenha o valor do CEP digitado pelo usuário
+            const cep = cepInput.value;
+
+            // Verifique se o CEP tem um formato válido (opcional)
+            if (cep.length !== 8) {
+                alert("CEP inválido. Certifique-se de inserir 8 dígitos.");
+                return;
+            }
+
+            // URL da API ViaCEP para consulta de CEP
+            const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
+
+            // Faça uma solicitação HTTP para a API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert("CEP não encontrado. Verifique o CEP e tente novamente.");
+                    } else {
+                        // Preencha os campos com os dados retornados pela API
+                        logradouroInput.value = data.logradouro;
+                        bairroInput.value = data.bairro;
+                        cidadeInput.value = data.localidade;
+                        ufInput.value = data.uf;
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro na busca de CEP: " + error);
+                    alert("Erro na busca de CEP. Verifique o CEP e tente novamente.");
+                });
+        }
+
+        const cepForm = document.getElementById("cepForm");
+        cepForm.addEventListener("submit", buscarCep);
+    </script>
+</body>
+</html>

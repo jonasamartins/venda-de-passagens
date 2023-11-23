@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Sobre Nós</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Vendas de Passagens</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="pacotes-aereos.html">Pacotes Aéreos</a></li>
+                    <li><a href="pacotes-terrestres.html">Pacotes Terrestres</a></li>
+                    <li><a href="sobre-nos-contato.html">Sobre Nós</a></li>
+                    <li><a href="area-cliente.html">Área do Cliente</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="about">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>Somos uma empresa dedicada a proporcionar experiências de viagem incríveis para nossos clientes. Nossa missão é tornar a sua viagem memorável e fácil de planejar. Contamos com uma equipe dedicada e pacotes promocionais para atender às suas necessidades de viagem.</p>
+                <p>Nossa empresa é apaixonada por viagens e estamos comprometidos em oferecer as melhores experiências de viagem para nossos clientes. Com anos de experiência no setor, entendemos a importância de proporcionar pacotes promocionais incríveis e atendimento excepcional.</p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Tem alguma pergunta ou comentário? Deixe-nos saber!</p>
+                <form class="contact-form" action="processar-contato.php" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo">Motivo do Contato</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="elogio">Elogio</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                    </div> 
+                    <div class="form-group">
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Limpar Campos</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">Todos os direitos reservados &copy; 2023. Desenvolvido por Jonas A. Martins</p>
+        </div>
+    </footer>
+</body>
+</html>

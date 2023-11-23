@@ -1,0 +1,142 @@
+/* styles.css */
+/* Adicione isso ao seu arquivo styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    margin: 0;
+}
+
+.menu {
+    margin-top: 20px; /* Adicionei uma margem superior para afastar o menu da logo */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffd700; /* cor de destaque ao passar o mouse */
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: DBEDEE;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.logo {
+    margin: 0;
+    font-size: 30px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero-title {
+    margin: 0;
+    font-size: 36px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+}
+
+/* Adicione o ponto antes de "packages" e "package-card" */
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.package-card {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Garante que as bordas e o preenchimento não afetem a largura total */
+}
+
+.package-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+refaça da seguinte forma: 
+1- pagina inicial, duas sessoes: (1) promoções aeraes com os pacotes das companhias aeres e sessão (2)promoções terrestre com os pacatotes de companhias terrestre. 
+2- Menubar:criar html para cada opção:
+2.1-Pacotes Aéreos: somente as promoções aeres 
+2.2-Pacotes Terrestres: somente pacotes terrestres
+2.3-Sobre Nós Contato: informações sobre a empresa e campos para enviar uma mensagem: a mensagem pode ser: Reclamação; Elogio; Sugestão; Outros com botão limpar campos e enviar;
+2.4- Área do Cliente: Casdastrar; Login
+2.4.1- Criar uma tela para cadastrar: Email; CPF; Celular; Nome Completo; cep (com uma api em um botton para buscar o cep e preencher automaticamente os campos: Logradouro; bairro; cidade; UF. botão Cadastrar e Limpar Campos. 
+2.4.2- Login: uma tela de logim com: Email; senha: esqueceu senha: abrir um imput para o usuário digitar o email e validar com o email cadastro se for igual emitir uma mensagem de envio, se não for o mesmo endereço de email emitir uma mensagem de email diferente 

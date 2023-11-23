@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de CEP</title>
+</head>
+<body>
+    <h1>Consulta de CEP</h1>
+    <form id="cepForm">
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" required>
+        <button type="submit">Buscar CEP</button>
+    </form>
+
+    <label for="logradouro">Logradouro:</label>
+    <input type="text" id="logradouro" readonly>
+    <br>
+
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" readonly>
+    <br>
+
+    <label for="cidade">Cidade:</label>
+    <input type="text" id="cidade" readonly>
+    <br>
+
+    <label for="uf">UF:</label>
+    <input type="text" id="uf" readonly>
+
+    <script>
+        function buscarCep(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const cepInput = document.getElementById("cep");
+            const logradouroInput = document.getElementById("logradouro");
+            const bairroInput = document.getElementById("bairro");
+            const cidadeInput = document.getElementById("cidade");
+            const ufInput = document.getElementById("uf");
+
+            // Obtenha o valor do CEP digitado pelo usuário
+            const cep = cepInput.value;
+
+            // Verifique se o CEP tem um formato válido (opcional)
+            if (cep.length !== 8) {
+                alert("CEP inválido. Certifique-se de inserir 8 dígitos.");
+                return;
+            }
+
+            // URL da API ViaCEP para consulta de CEP
+            const apiUrl = `https://viacep.com.br/ws/${cep}/json/`;
+
+            // Faça uma solicitação HTTP para a API
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        alert("CEP não encontrado. Verifique o CEP e tente novamente.");
+                    } else {
+                        // Preencha os campos com os dados retornados pela API
+                        logradouroInput.value = data.logradouro;
+                        bairroInput.value = data.bairro;
+                        cidadeInput.value = data.localidade;
+                        ufInput.value = data.uf;
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro na busca de CEP: " + error);
+                    alert("Erro na busca de CEP. Verifique o CEP e tente novamente.");
+                });
+        }
+
+        const cepForm = document.getElementById("cepForm");
+        cepForm.addEventListener("submit", buscarCep);
+    </script>
+</body>
+</html>
